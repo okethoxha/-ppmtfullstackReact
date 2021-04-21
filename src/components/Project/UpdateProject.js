@@ -133,6 +133,7 @@ class UpdateProject extends Component {
                                 <div className="form-group">
                                     <input
                                         type="date"
+                                        className="form-control form-control-lg"
                                         name="start_date"
                                         value={this.state.start_date}
                                         onChange={this.onChange}
