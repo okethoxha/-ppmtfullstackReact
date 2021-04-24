@@ -6,7 +6,7 @@ const initState = {
     project_task: {}
 }
 
-export default function (state = initState, action) {
+export default function (state = initState  , action) {
     switch (action.type){
 
         case GET_BACKLOG:
