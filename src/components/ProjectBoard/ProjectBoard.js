@@ -7,16 +7,16 @@ import {getBacklog} from "../../actions/backlogAction";
 
 
 class ProjectBoard extends Component {
-
     //constructor to handle errors
 
     componentDidMount() {
-        const {id} = this.props.match.params;
-        this.props.getBacklog(id)
+        const { id } = this.props.match.params;
+        this.props.getBacklog(id);
     }
 
     render() {
         const { id } = this.props.match.params;
+        const { project_tasks } = this.props.backlog;
         return (
             <div className="container">
                 <Link to={`/addProjectTask/${id}`} className="btn btn-primary mb-3">
@@ -24,8 +24,7 @@ class ProjectBoard extends Component {
                 </Link>
                 <br />
                 <hr />
-                <Backlog />
-
+                <Backlog project_tasks_prop={project_tasks} />
             </div>
         );
     }
@@ -34,10 +33,13 @@ class ProjectBoard extends Component {
 ProjectBoard.propTypes = {
     backlog: PropTypes.object.isRequired,
     getBacklog: PropTypes.func.isRequired
-}
+};
 
 const mapStateToProps = state => ({
     backlog: state.backlog
-})
+});
 
-export default connect(null, {getBacklog})(ProjectBoard);
+export default connect(
+    mapStateToProps,
+    { getBacklog }
+)(ProjectBoard);
