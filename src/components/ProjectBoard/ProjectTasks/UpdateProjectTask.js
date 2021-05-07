@@ -17,7 +17,7 @@ class UpdateProjectTask extends Component {
       status: "",
       priority: "",
       dueDate: "",
-      projectIdentifier: "",
+      projectIdentifer: "",
       create_At: "",
       errors: {}
     };
@@ -43,7 +43,7 @@ class UpdateProjectTask extends Component {
       status,
       priority,
       dueDate,
-      projectIdentifier,
+      projectIdentifer,
       create_At
     } = nextProps.project_task;
 
@@ -55,7 +55,7 @@ class UpdateProjectTask extends Component {
       status,
       priority,
       dueDate,
-      projectIdentifier,
+      projectIdentifer,
       create_At
     });
   }
@@ -75,13 +75,13 @@ class UpdateProjectTask extends Component {
       status: this.state.status,
       priority: this.state.priority,
       dueDate: this.state.dueDate,
-      projectIdentifier: this.state.projectIdentifier,
+      projectIdentifer: this.state.projectIdentifer,
       create_At: this.state.create_At
     };
 
     // console.log(UpdateProjectTask);
     this.props.updateProjectTask(
-        this.state.projectIdentifier,
+        this.state.projectIdentifer,
         this.state.projectSequence,
         UpdateProjectTask,
         this.props.history
@@ -96,14 +96,14 @@ class UpdateProjectTask extends Component {
             <div className="row">
               <div className="col-md-8 m-auto">
                 <Link
-                    to={`/projectBoard/${this.state.projectIdentifier}`}
+                    to={`/projectBoard/${this.state.projectIdentifer}`}
                     className="btn btn-light"
                 >
                   Back to Project Board
                 </Link>
                 <h4 className="display-4 text-center">Update Project Task</h4>
                 <p className="lead text-center">
-                  Project Name: {this.state.projectIdentifier} | Project Task ID:{" "}
+                  Project Name: {this.state.projectIdentifer} | Project Task ID:{" "}
                   {this.state.projectSequence}{" "}
                 </p>
                 <form onSubmit={this.onSubmit}>
