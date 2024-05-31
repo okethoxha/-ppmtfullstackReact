@@ -115,10 +115,10 @@ class AddProjectTask extends Component {
 
                 <div className="form-group">
                   <select
-                    className="form-control form-control-lg"
-                    name="status"
-                    value={this.state.status}
-                    onChange={this.onChange}
+                      className="form-control form-control-lg"
+                      name="status"
+                      value={this.state.status}
+                      onChange={this.onChange}
                   >
                     <option value="">Select Status</option>
                     <option value="TO_DO">TO DO</option>
@@ -128,7 +128,7 @@ class AddProjectTask extends Component {
                 </div>
 
                 <input
-                  type="submit"
+                    type="submit"
                   className="btn btn-primary btn-block mt-4"
                 />
               </form>

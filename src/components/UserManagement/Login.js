@@ -22,14 +22,24 @@ class Login extends Component {
         }
     }
 
-    componentWillReceiveProps(nextProps) {
+    // componentWillReceiveProps(nextProps) {
+    //
+    //     if (nextProps.security.validToken) {
+    //         this.props.history.push("/dashboard");
+    //     }
+    //
+    //     if (nextProps.errors) {
+    //         this.setState({ errors: nextProps.errors });
+    //     }
+    // }
 
-        if (nextProps.security.validToken) {
+    componentDidUpdate(prevProps) {
+        if (prevProps.security.validToken !== this.props.security.validToken && this.props.security.validToken) {
             this.props.history.push("/dashboard");
         }
 
-        if (nextProps.errors) {
-            this.setState({ errors: nextProps.errors });
+        if (prevProps.errors !== this.props.errors) {
+            this.setState({ errors: this.props.errors });
         }
     }
 

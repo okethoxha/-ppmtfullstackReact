@@ -69,5 +69,5 @@ ProjectTask.propTypes = {
 };
 export default connect(
     null,
-    { deleteProjectTask }
+    {deleteProjectTask}
 )(ProjectTask);
